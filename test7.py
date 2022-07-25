@@ -1,9 +1,12 @@
-def get_rec_fact(n):
-    if n<0:
-        return False
-    elif n<2:
-        return 1
-    else:
-        return n*get_rec_fact(n-1)
+def even_numbers(maximum):
+    x = maximum + 1
+    return_string = ""
+    for x in range(2,x,2):
+        return_string += str(x) + " "
+    return return_string.strip()
 
-print(get_rec_fact(-4))
+print(even_numbers(6))  # Should be 2 4 6
+print(even_numbers(10)) # Should be 2 4 6 8 10
+print(even_numbers(1))  # No numbers displayed
+print(even_numbers(3))  # Should be 2
+print(even_numbers(0))  # No numbers displayed
