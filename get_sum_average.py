@@ -4,6 +4,5 @@ length = 0
 for value in values:
     sum +=value
     length +=1
-    print(sum)
-    print(length)
+
 print("Total sum: " + str(sum) + " - Average: " + str(sum/length))
