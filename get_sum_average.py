@@ -2,7 +2,8 @@ input_string = input("Enter list elements seperated by space ")
 print("\n")
 user_list = input_string.split()
 
-print("list: ", user_list)
+print("list: ", user_list, end="**")
+print("\n")
 
 sum = 0
 length = 0
