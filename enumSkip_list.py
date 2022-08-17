@@ -3,7 +3,7 @@ def skip_elements(elements):
 	new_list = []
 	for count, value in enumerate(elements):
 		if count % 2 == 0:
-			new_list.append(value)
+			new_list.append("Item at {} index: {}".format(count, value))
 	return new_list
 
 print(skip_elements(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']

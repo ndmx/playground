@@ -1,18 +1,19 @@
 def sum_divisors(n):
   sum = 0
   # Return the sum of all divisors of n, not including n
-
-  if n == 0 and n < 0:
-    return 0
-  elif n != 0 and n>0:
-    i = 1
-    sum = i
-    print("initial " + str(sum))
+  i = 1
+  if n <= 0:
+    sum = 0
+  if n == 0:
+    sum = 0
+  elif n>0:
     while i < n:
+      if n%i == 0:
+        sum = 1
+        print("{} value is {}".format(i, sum))
+        sum = sum + i
         i = i + 1
-        if n%i ==0:
-            sum = sum + i
-            print("second value: " + str(sum))
+      
   return sum - n
 
 print(sum_divisors(0))
