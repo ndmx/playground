@@ -38,9 +38,7 @@ def extractDate(birthdate):
         result += "The {0:0>2d}{1:2s} Person has a birthday on the {2:0>2s}{3:2s} of {4:^.3s}, {5:6s}\n".format(loop_number+1, numsuffix(loop_number, 0), year_day, numsuffix(j, 1), monthname, year_year)
 
         year_day=year_month=year_year = ""
-        
-        #for n in [int(n) for n in str(dates)]:
-        # print(n)   
+         
     return result
     
 highest_paid_actors_birthdate = ["25.9.1968","6.4.1969","13.6.1981","9.9.1966","5.1.1975","7.4.1954","9.9.1967","4.4.1965","11.8.1983","2.5.1972"]
