@@ -5,38 +5,39 @@ import calendar
 def elem_num(elem):
     return elem[-4:]
 
+def numsuffix(number, key):
+    fig = number - key
+    if fig == 0:
+        ltr = "st"
+    elif fig == 1:
+        ltr = "nd"
+    elif fig == 2:
+        ltr = "rd"
+    else:
+        ltr = "th"
+    return ltr
+
 def extractDate(birthdate):
     birthdate.sort(key=elem_num)
-    year_day=""
-    year_month=""
-    year_year = ""
-    result = ""
+    year_day=year_month=year_year=result = ""
 
-    for number, birthday in enumerate(birthdate):
+    for loop_number, birthday in enumerate(birthdate):
         dates = birthday.split(".")
         for num, days in enumerate(dates):
             if num == 0:
                 year_day += days
             elif num == 1:
-                year_month += (days)
+                year_month += days
             elif num == 2:
                 year_year += days
 
         i = (int(str(year_month)))
+        j = (int(str(year_day)))
         monthname = calendar.month_name[(i)]
-        if number == 0:
-            abrv = "st"
-        elif number == 1:
-            abrv = "nd"
-        elif number == 2:
-            abrv = "rd"
-        else:
-            abrv = "th"
-        result += "The {0:0>2d}{1:2s} Person has a birthday on the {2:0>2s}{3:2s} of {4:^.3s}, {5:6s}\n".format(number+1, abrv, year_day, abrv, monthname, year_year)
+            
+        result += "The {0:0>2d}{1:2s} Person has a birthday on the {2:0>2s}{3:2s} of {4:^.3s}, {5:6s}\n".format(loop_number+1, numsuffix(loop_number, 0), year_day, numsuffix(j, 1), monthname, year_year)
 
-        year_day=""
-        year_month=""
-        year_year = ""
+        year_day=year_month=year_year = ""
         
         #for n in [int(n) for n in str(dates)]:
         # print(n)   
