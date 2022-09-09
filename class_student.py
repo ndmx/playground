@@ -9,7 +9,7 @@ def main():
     print(f"{student.name} from {student.house}")
 
 def get_student():
-    student = Student()
+    student = Student("name", "house")
     student.name = input("Name: ")
     student.house = input("House: ")
     return student
